@@ -1,0 +1,47 @@
+﻿@using CacheTag.Mvc.HtmlHelpers
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CacheTag</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	@Html.RenderStyles(new []
+	{
+		"~/TwitterBootstrap/less/bootstrap.less",
+		"~/TwitterBootstrap/less/responsive.less",
+		"~/SyntaxHighlighter/styles/shCore.css",
+		"~/SyntaxHighlighter/styles/shThemeDefault.css",
+		"~/Content/app.less"
+	})
+</head>
+<body>
+	@{
+		Html.RenderPartial("Navbar");
+	}
+	@RenderBody()
+	@{
+		Html.RenderPartial("Footer");
+	}
+	@Html.RenderScripts(new []
+	{
+		"~/Scripts/jquery-1.7.1.js",
+		"~/TwitterBootstrap/js/bootstrap-alert.js",
+		"~/TwitterBootstrap/js/bootstrap-button.js",
+		"~/TwitterBootstrap/js/bootstrap-carousel.js",
+		"~/TwitterBootstrap/js/bootstrap-collapse.js",
+		"~/TwitterBootstrap/js/bootstrap-dropdown.js",
+		"~/TwitterBootstrap/js/bootstrap-modal.js",
+		"~/TwitterBootstrap/js/bootstrap-scrollspy.js",
+		"~/TwitterBootstrap/js/bootstrap-tab.js",
+		"~/TwitterBootstrap/js/bootstrap-tooltip.js",
+		"~/TwitterBootstrap/js/bootstrap-transition.js",
+		"~/TwitterBootstrap/js/bootstrap-typeahead.js",
+		"~/SyntaxHighlighter/scripts/XRegExp.js",
+		"~/SyntaxHighlighter/scripts/shCore.js",
+		"~/SyntaxHighlighter/scripts/shBrushCSharp.js",
+		"~/SyntaxHighlighter/scripts/shBrushXml.js",
+		"~/Scripts/square.coffee",
+		"~/Scripts/app.js"
+	})
+	@Html.RenderReferencedScriptsInline()
+</body>
+</html>

@@ -1,0 +1,11 @@
+.gradient(@color, @start, @stop)
+{
+	background: @color;
+	background: -webkit-gradient(linear, left top, left bottom, from(@start), to(@stop));
+	background: -webkit-linear-gradient(top, @start, @stop);
+	background: -moz-linear-gradient(top, @start, @stop);
+	background: -ms-linear-gradient(top, @start, @stop);
+	background: -o-linear-gradient(top, @start, @stop);
+	background: linear-gradient(top, @start, @stop);
+	background-repeat: no-repeat;
+}

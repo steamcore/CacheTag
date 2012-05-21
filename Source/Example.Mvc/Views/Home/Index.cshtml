@@ -1,0 +1,86 @@
+﻿<div class="container">
+	<div class="row">
+		<div class="span12">
+			<header>
+				<div class="hero-unit hidden-phone">
+					<div style="float: right; padding-top: 30px;">
+						<a href="https://bitbucket.org/weazl/cachetag" class="btn btn-primary btn-large" target="_blank">BitBucket</a>
+						<a href="http://nuget.org/packages/CacheTag/" class="btn btn-primary btn-large" target="_blank">NuGet</a>
+					</div>
+					<h1>CacheTag</h1>
+					<p>Simple and efficient JavaScript and CSS minification for ASP.NET MVC</p>
+				</div>
+				<div class="well visible-phone">
+					<h1>CacheTag</h1>
+					<p>Simple and efficient JavaScript and CSS minification for ASP.NET MVC</p>
+				</div>
+			</header>
+		</div>
+	</div>
+	<div class="row">
+		<div class="span6">
+			<section>
+				<h2>What it does</h2>
+				<p>CacheTag helps speed up your page load times in a number of ways.</p>
+				<ul>
+					<li>Reduces the number of HTTP requests by combining resources</li>
+					<li>Makes resources quicker to download thanks to minification</li>
+					<li>All resources are hashed, preventing clients from using old resources</li>
+					<li>Since any change creates a new hash, resources can be cached aggressively</li>
+				</ul>
+			</section>
+			<section>
+				<h2>Compared to the competition</h2>
+				<p>CacheTag provides a number of benefits compared to other similar frameworks.</p>
+				<ul>
+					<li>It's real easy to use, see the examples</li>
+					<li>It's flexible because it works with generic lists, no custom bundle classes</li>
+					<li>It's faster because it only compiles resources when needed, even in debug mode</li>
+					<li>Built to be extendable, use the source Luke!</li>
+				</ul>
+			</section>
+		</div>
+		<div class="span6">
+			<section>
+				<h2>Example Razor code</h2>
+				<p>Let's say you want to include a couple of CSS files and JavaScripts, you can try this..</p>
+				<pre class="brush: csharp; toolbar: false;">
+@@Html.RenderStyles(new []
+{
+	"~/CSS/Reset.css",
+	"~/CSS/Site.less"
+})
+@@Html.RenderScripts(new []
+{
+	"~/Scripts/jquery-1.7.1.js",
+	"~/Scripts/app.coffee"
+})</pre>
+				<p>.. and that's it. Check out what this would produce below.</p>
+			</section>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="span12">
+			<section>
+				<h2>Resulting HTML in release mode</h2>
+				<p>The example above would minify and combine the resources, calculate a unique hash and output HTML similar to this.</p>
+				<pre class="brush: html; toolbar: false;">
+&lt;link rel="stylesheet" type="text/css" href="/_cachetag/e4dddf2cdd91d693e023cdc5dc0b56d8664766db" /&gt;
+&lt;script src="/_cachetag/80e9e6fc43c6644ea9badec99eb5c6cbec87c4b0" type="text/javascript"&gt;&lt;/script&gt;
+</pre>
+			</section>
+			<section>
+				<h2>Resulting HTML in debug mode</h2>
+				<p>In debug mode however, it would still calculate hashes of all resources but link to them individually, each with a query parameter containing the hash, this is to ease debugging but still prevent you from accidentally using stale scripts or CSS.</p>
+				<pre class="brush: html; toolbar: false;">
+&lt;link rel="stylesheet" type="text/css" href="/CSS/Reset.css?f49b5e57ac2258bd3c980f30271554fa4731f26d" /&gt;
+&lt;link rel="stylesheet" type="text/css" href="/CSS/Site.less?b8193c8e87d1b1f3cc6b8ad5ef3d9a1ac2b68961" /&gt;
+&lt;script src="/Scripts/jquery-1.7.1.js?b47730ffaec4272a8a01756af2ef13ecea1c4e92" type="text/javascript"&gt;&lt;/script&gt;
+&lt;script src="/Scripts/app.coffee?57818a7855d3931d2884ff32e0949888a225f0d1" type="text/javascript"&gt;&lt;/script&gt;
+</pre>
+			</section>
+		</div>
+	</div>
+
+</div>

@@ -1,0 +1,215 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5C9C1937-5414-40D9-97BA-B4BA581E5F27}</ProjectGuid>
+    <ProjectTypeGuids>{E53F8FEA-EAE0-44A6-8774-FFD645390401};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Example.Mvc</RootNamespace>
+    <AssemblyName>Example.Mvc</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\Source\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="dotless.Core, Version=1.3.0.3, Culture=neutral, PublicKeyToken=96b446c9e63eae34, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\dotless.1.3.0.3\lib\dotless.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.WebPages, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.Helpers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\app.less" />
+    <Content Include="Content\functions.less" />
+    <Content Include="Content\site.less" />
+    <Content Include="Global.asax" />
+    <Content Include="Scripts\jquery-1.7.1.js" />
+    <Content Include="Scripts\app.js" />
+    <Content Include="SyntaxHighlighter\scripts\shBrushCSharp.js" />
+    <Content Include="SyntaxHighlighter\scripts\shBrushXml.js" />
+    <Content Include="SyntaxHighlighter\scripts\shCore.js" />
+    <Content Include="SyntaxHighlighter\scripts\XRegExp.js" />
+    <Content Include="SyntaxHighlighter\styles\shCore.css" />
+    <Content Include="SyntaxHighlighter\styles\shThemeDefault.css" />
+    <Content Include="SyntaxHighlighter\styles\shThemeEclipse.css" />
+    <Content Include="TwitterBootstrap\img\glyphicons-halflings-white.png" />
+    <Content Include="TwitterBootstrap\img\glyphicons-halflings.png" />
+    <Content Include="TwitterBootstrap\js\bootstrap-alert.js" />
+    <Content Include="TwitterBootstrap\js\bootstrap-button.js" />
+    <Content Include="TwitterBootstrap\js\bootstrap-carousel.js" />
+    <Content Include="TwitterBootstrap\js\bootstrap-collapse.js" />
+    <Content Include="TwitterBootstrap\js\bootstrap-dropdown.js" />
+    <Content Include="TwitterBootstrap\js\bootstrap-modal.js" />
+    <Content Include="TwitterBootstrap\js\bootstrap-popover.js" />
+    <Content Include="TwitterBootstrap\js\bootstrap-scrollspy.js" />
+    <Content Include="TwitterBootstrap\js\bootstrap-tab.js" />
+    <Content Include="TwitterBootstrap\js\bootstrap-tooltip.js" />
+    <Content Include="TwitterBootstrap\js\bootstrap-transition.js" />
+    <Content Include="TwitterBootstrap\js\bootstrap-typeahead.js" />
+    <Content Include="TwitterBootstrap\less\accordion.less" />
+    <Content Include="TwitterBootstrap\less\alerts.less" />
+    <Content Include="TwitterBootstrap\less\bootstrap.less" />
+    <Content Include="TwitterBootstrap\less\breadcrumbs.less" />
+    <Content Include="TwitterBootstrap\less\button-groups.less" />
+    <Content Include="TwitterBootstrap\less\buttons.less" />
+    <Content Include="TwitterBootstrap\less\carousel.less" />
+    <Content Include="TwitterBootstrap\less\close.less" />
+    <Content Include="TwitterBootstrap\less\code.less" />
+    <Content Include="TwitterBootstrap\less\component-animations.less" />
+    <Content Include="TwitterBootstrap\less\dropdowns.less" />
+    <Content Include="TwitterBootstrap\less\forms.less" />
+    <Content Include="TwitterBootstrap\less\grid.less" />
+    <Content Include="TwitterBootstrap\less\hero-unit.less" />
+    <Content Include="TwitterBootstrap\less\labels-badges.less" />
+    <Content Include="TwitterBootstrap\less\layouts.less" />
+    <Content Include="TwitterBootstrap\less\mixins.less" />
+    <Content Include="TwitterBootstrap\less\modals.less" />
+    <Content Include="TwitterBootstrap\less\navbar.less" />
+    <Content Include="TwitterBootstrap\less\navs.less" />
+    <Content Include="TwitterBootstrap\less\pager.less" />
+    <Content Include="TwitterBootstrap\less\pagination.less" />
+    <Content Include="TwitterBootstrap\less\popovers.less" />
+    <Content Include="TwitterBootstrap\less\progress-bars.less" />
+    <Content Include="TwitterBootstrap\less\reset.less" />
+    <Content Include="TwitterBootstrap\less\responsive-1200px-min.less" />
+    <Content Include="TwitterBootstrap\less\responsive-767px-max.less" />
+    <Content Include="TwitterBootstrap\less\responsive-768px-979px.less" />
+    <Content Include="TwitterBootstrap\less\responsive-navbar.less" />
+    <Content Include="TwitterBootstrap\less\responsive-utilities.less" />
+    <Content Include="TwitterBootstrap\less\responsive.less" />
+    <Content Include="TwitterBootstrap\less\scaffolding.less" />
+    <Content Include="TwitterBootstrap\less\sprites.less" />
+    <Content Include="TwitterBootstrap\less\tables.less" />
+    <Content Include="TwitterBootstrap\less\thumbnails.less" />
+    <Content Include="TwitterBootstrap\less\tooltip.less" />
+    <Content Include="TwitterBootstrap\less\type.less" />
+    <Content Include="TwitterBootstrap\less\utilities.less" />
+    <Content Include="TwitterBootstrap\less\variables.less" />
+    <Content Include="TwitterBootstrap\less\wells.less" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Scripts\square.coffee" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CacheTag.Core\CacheTag.Core.csproj">
+      <Project>{A76A5B3F-A456-4D47-95D8-43EDB25A3B23}</Project>
+      <Name>CacheTag.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CacheTag.Module.AjaxMin\CacheTag.Module.AjaxMin.csproj">
+      <Project>{B5084B08-2F1D-4E6C-AB26-A20A99D6DF5A}</Project>
+      <Name>CacheTag.Module.AjaxMin</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CacheTag.Module.DotLess\CacheTag.Module.DotLess.csproj">
+      <Project>{D99FB99D-B50C-4D82-8A48-94F4F4C7F447}</Project>
+      <Name>CacheTag.Module.DotLess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CacheTag.Module.SassAndCoffee\CacheTag.Module.SassAndCoffee.csproj">
+      <Project>{1093D3EC-C7B3-4D45-B31A-F600FB623342}</Project>
+      <Name>CacheTag.Module.SassAndCoffee</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CacheTag.Mvc\CacheTag.Mvc.csproj">
+      <Project>{6D018B43-217E-4831-886C-CEC3F6876139}</Project>
+      <Name>CacheTag.Mvc</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\Navbar.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\Footer.cshtml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <SaveServerSettingsInUserFile>True</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
+</Project>

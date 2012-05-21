@@ -1,0 +1,14 @@
+﻿^Build
+
+bin/
+obj/
+
+_ReSharper\.[\w\d\.]+/
+packages/
+
+\.user$
+\.suo$
+\.sln\.cache$
+\.dotCover$
+\.docstates$
+\.Publish\.xml$

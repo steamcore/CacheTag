@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>CacheTag</id>
+    <version>1.0.0-beta2</version>
+    <authors>Steamcore</authors>
+    <owners>Steamcore</owners>
+    <projectUrl>http://cachetag.net/</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Simple and efficient JavaScript and CSS minification for ASP.NET MVC</description>
+    <releaseNotes>Performance fixes, remote file support, virtual path provider support</releaseNotes>
+    <dependencies>
+      <dependency id="AjaxMin" version="4.50.4504.34801" />
+      <dependency id="dotless" version="1.3.0.3" />
+      <dependency id="Microsoft.Web.Infrastructure" version="1.0.0.0" />
+      <dependency id="WebActivator" version="1.5" />
+    </dependencies>
+    <frameworkAssemblies>
+      <frameworkAssembly assemblyName="System.Web" />
+      <frameworkAssembly assemblyName="System.Web.Mvc" />
+    </frameworkAssemblies>
+    <tags>js javascript css less dotless minify minification bundle bundling</tags>
+  </metadata>
+  <files>
+    <file src="..\Build\CacheTag.Core.dll" target="lib\net40" />
+    <file src="..\Build\CacheTag.Mvc.dll" target="lib\net40" />
+    <file src="..\Build\CacheTag.Module.AjaxMin.dll" target="lib\net40" />
+    <file src="..\Build\CacheTag.Module.DotLess.dll" target="lib\net40" />
+  </files>
+</package>

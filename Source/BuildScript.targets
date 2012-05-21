@@ -1,0 +1,6 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Condition="'$(BuildTargetDir)' != ''">
+    <BaseIntermediateOutputPath>$(BuildTargetDir)\obj\</BaseIntermediateOutputPath>
+    <OutputPath>$(BuildTargetDir)</OutputPath>
+  </PropertyGroup>
+</Project>
