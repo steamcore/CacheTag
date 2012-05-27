@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using System.Web.Caching;
 using CacheTag.Core.Cache;
 using CacheTag.Core.Configuration;
@@ -60,12 +61,15 @@ namespace CacheTag.Core.Resources
 
 		protected virtual void LoadFileProperties(Dictionary<string, object> properties)
 		{
-			var binaryContent = fileProvider.ReadContent();
-			properties["BinaryContent"] = binaryContent;
-			properties["Hash"] = Settings.HashAlgorithm.ComputeStringHash(binaryContent);
-			properties["Url"] = Settings.IsReleaseMode
-				? Container.Resolve<IUrlResolver>().GetResourceUrl(this)
-				: string.Format("{0}?{1}", fileProvider.AppRelativePath, Hash);
+			using (var hashAlgorithm = HashAlgorithm.Create(Settings.HashAlgorithm))
+			{
+				var binaryContent = fileProvider.ReadContent();
+				properties["BinaryContent"] = binaryContent;
+				properties["Hash"] = hashAlgorithm.ComputeStringHash(binaryContent);
+				properties["Url"] = Settings.IsReleaseMode
+					? Container.Resolve<IUrlResolver>().GetResourceUrl(this)
+					: string.Format("{0}?{1}", fileProvider.AppRelativePath, Hash);
+			}
 		}
 	}
 }

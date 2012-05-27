@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Web.Caching;
 using CacheTag.Core.Cache;
@@ -90,7 +91,10 @@ namespace CacheTag.Module.AjaxMin
 			{
 				sb.AppendLine(res.Name);
 			}
-			return "cachetag_" + Settings.HashAlgorithm.ComputeStringHash(sb.ToString());
+			using (var hashAlgorithm = HashAlgorithm.Create(Settings.HashAlgorithm))
+			{
+				return "cachetag_" + hashAlgorithm.ComputeStringHash(sb.ToString());
+			}
 		}
 
 		private static CacheDependency BuildCacheDependency<T>(IEnumerable<T> resources)

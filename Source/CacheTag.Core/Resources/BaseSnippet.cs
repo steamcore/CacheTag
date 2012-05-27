@@ -1,3 +1,4 @@
+using System.Security.Cryptography;
 using System.Text;
 using System.Web.Caching;
 using CacheTag.Core.Configuration;
@@ -17,8 +18,11 @@ namespace CacheTag.Core.Resources
 
 		protected BaseSnippet(string snippet)
 		{
-			Content = snippet;
-			Hash = Settings.HashAlgorithm.ComputeStringHash(snippet);
+			using (var hashAlgorithm = HashAlgorithm.Create(Settings.HashAlgorithm))
+			{
+				Content = snippet;
+				Hash = hashAlgorithm.ComputeStringHash(snippet);
+			}
 		}
 	}
 }
