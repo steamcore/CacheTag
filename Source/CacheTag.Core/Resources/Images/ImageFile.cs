@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
+using CacheTag.Core.Configuration;
 using CacheTag.Core.Filesystem;
 
 namespace CacheTag.Core.Resources.Images
@@ -53,21 +54,7 @@ namespace CacheTag.Core.Resources.Images
 		{
 			var extension = Path.GetExtension(path) ?? string.Empty;
 
-			switch (extension.ToLowerInvariant())
-			{
-				case ".jpg":
-				case ".jpeg":
-					return "image/jpeg";
-
-				case ".gif":
-					return "image/gif";
-
-				case ".png":
-					return "image/png";
-
-				default:
-					throw new ArgumentException("Unknown image type");
-			}
+			return FileExtensions.GetMimeType(extension);
 		}
 	}
 }

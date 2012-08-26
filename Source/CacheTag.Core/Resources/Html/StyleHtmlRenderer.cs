@@ -7,12 +7,12 @@ namespace CacheTag.Core.Resources.Html
 	{
 		public string RenderHtml(IStyleResource resource)
 		{
-			return string.Format(Settings.StyleTagFormat, resource.Url);
+			return string.Format(CacheTagSettings.StyleTagFormat, resource.Url);
 		}
 
 		public string RenderInlineHtml(IStyleResource resource)
 		{
-			return string.Format(Settings.InlineStyleTagFormat, resource.Content);
+			return string.Format(CacheTagSettings.InlineStyleTagFormat, resource.Content);
 		}
 	}
 }

@@ -3,12 +3,13 @@
 bin/
 obj/
 
-_ReSharper\.[\w\d\.]+/
+_ReSharper.*/
 packages/
 
-\.user$
-\.suo$
-\.sln\.cache$
-\.dotCover$
-\.docstates$
-\.Publish\.xml$
+*.user
+*.suo
+*.sln.cache
+*.dotCover
+*.docstates
+*.Publish.xml
+*.ncrunchsolution

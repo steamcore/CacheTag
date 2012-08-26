@@ -18,7 +18,7 @@ namespace CacheTag.Core.Resources
 
 		protected BaseSnippet(string snippet)
 		{
-			using (var hashAlgorithm = HashAlgorithm.Create(Settings.HashAlgorithm))
+			using (var hashAlgorithm = HashAlgorithm.Create(CacheTagSettings.HashAlgorithm))
 			{
 				Content = snippet;
 				Hash = hashAlgorithm.ComputeStringHash(snippet);

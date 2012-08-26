@@ -31,8 +31,10 @@ namespace Example.Mvc
 			RegisterRoutes(RouteTable.Routes);
 
 			// Example configuration
-			MvcSettings.RouteUrl = "_res/{id}";
-			Settings.RuntimeMode = RuntimeMode.ForceRelease;
+			CacheTagMvcSettings.RouteUrl = "_res/{id}";
+			CacheTagSettings.RuntimeMode = RuntimeMode.ForceRelease;
+			//CacheTagSettings.HashFilesInDebugMode = true;
+			//CacheTagSettings.HideFileExtensions = true;
 		}
 	}
 }

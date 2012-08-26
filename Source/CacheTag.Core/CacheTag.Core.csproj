@@ -57,8 +57,9 @@
     <Compile Include="Cache\ICacheProvider.cs" />
     <Compile Include="Configuration\Container.cs" />
     <Compile Include="Configuration\IUrlResolver.cs" />
+    <Compile Include="Configuration\MimeTypeMap.cs" />
     <Compile Include="Configuration\RuntimeMode.cs" />
-    <Compile Include="Configuration\Settings.cs" />
+    <Compile Include="Configuration\CacheTagSettings.cs" />
     <Compile Include="Extensions\HashAlgorithmExtensions.cs" />
     <Compile Include="Extensions\ResourceExtensions.cs" />
     <Compile Include="Extensions\StreamExtensions.cs" />

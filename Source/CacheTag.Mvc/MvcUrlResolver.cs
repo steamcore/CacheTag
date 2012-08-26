@@ -7,7 +7,14 @@ namespace CacheTag.Mvc
 	{
 		public string GetResourceUrl(IResource resource)
 		{
-			return "/" + MvcSettings.RouteUrl.Replace("{id}", resource.Hash);
+			var id = resource.Hash;
+
+			if (CacheTagSettings.HideFileExtensions == false)
+			{
+				id += MimeTypes.GetFileExtension(resource.MimeType);
+			}
+
+			return "/" + CacheTagMvcSettings.RouteUrl.Replace("{id}", id);
 		}
 	}
 }

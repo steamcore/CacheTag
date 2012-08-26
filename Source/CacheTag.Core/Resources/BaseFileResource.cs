@@ -61,14 +61,16 @@ namespace CacheTag.Core.Resources
 
 		protected virtual void LoadFileProperties(Dictionary<string, object> properties)
 		{
-			using (var hashAlgorithm = HashAlgorithm.Create(Settings.HashAlgorithm))
+			using (var hashAlgorithm = HashAlgorithm.Create(CacheTagSettings.HashAlgorithm))
 			{
 				var binaryContent = fileProvider.ReadContent();
 				properties["BinaryContent"] = binaryContent;
 				properties["Hash"] = hashAlgorithm.ComputeStringHash(binaryContent);
-				properties["Url"] = Settings.IsReleaseMode
+				properties["Url"] = CacheTagSettings.IsReleaseMode
 					? Container.Resolve<IUrlResolver>().GetResourceUrl(this)
-					: string.Format("{0}?{1}", fileProvider.AppRelativePath, Hash);
+					: CacheTagSettings.HashFilesInDebugMode
+						? string.Format("{0}?{1}", fileProvider.AppRelativePath, Hash)
+						: fileProvider.AppRelativePath;
 			}
 		}
 	}

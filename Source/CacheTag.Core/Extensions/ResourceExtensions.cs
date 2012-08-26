@@ -13,7 +13,7 @@ namespace CacheTag.Core.Extensions
 		public static IEnumerable<T> Compile<T>(this IEnumerable<T> items)
 			where T : IResource
 		{
-			return Settings.IsReleaseMode ? Container.Resolve<IResourceCompiler<T>>().Compile(items).Store() : items;
+			return CacheTagSettings.IsReleaseMode ? Container.Resolve<IResourceCompiler<T>>().Compile(items).Store() : items;
 		}
 
 		public static T Store<T>(this T item)

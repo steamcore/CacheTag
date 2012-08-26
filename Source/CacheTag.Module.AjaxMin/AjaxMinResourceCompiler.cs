@@ -30,7 +30,8 @@ namespace CacheTag.Module.AjaxMin
 
 		public AjaxMinResourceCompiler(CodeSettings codeSettings, CssSettings cssSettings)
 		{
-			this.codeSettings = codeSettings ?? new CodeSettings();
+			// https://github.com/andrewdavey/cassette/issues/157
+			this.codeSettings = codeSettings ?? new CodeSettings { KillSwitch = 0x40000000000 };
 			this.cssSettings = cssSettings ?? new CssSettings();
 		}
 
@@ -91,7 +92,7 @@ namespace CacheTag.Module.AjaxMin
 			{
 				sb.AppendLine(res.Name);
 			}
-			using (var hashAlgorithm = HashAlgorithm.Create(Settings.HashAlgorithm))
+			using (var hashAlgorithm = HashAlgorithm.Create(CacheTagSettings.HashAlgorithm))
 			{
 				return "cachetag_" + hashAlgorithm.ComputeStringHash(sb.ToString());
 			}

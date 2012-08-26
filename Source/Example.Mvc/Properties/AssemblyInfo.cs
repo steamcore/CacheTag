@@ -29,4 +29,4 @@ using CacheTag.Core.Configuration;
 //      Build Number
 //      Revision
 //
-[assembly: AssemblyVersion(Settings.AssemblyVersion)]
+[assembly: AssemblyVersion(CacheTagSettings.AssemblyVersion)]

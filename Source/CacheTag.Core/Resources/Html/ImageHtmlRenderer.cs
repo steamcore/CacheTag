@@ -8,7 +8,7 @@ namespace CacheTag.Core.Resources.Html
 	{
 		public string RenderHtml(IImageResource resource)
 		{
-			return string.Format(Settings.ImageTagFormat, resource.Url, resource.Width, resource.Height, resource.AlternateText);
+			return string.Format(CacheTagSettings.ImageTagFormat, resource.Url, resource.Width, resource.Height, resource.AlternateText);
 		}
 
 		public string RenderInlineHtml(IImageResource resource)

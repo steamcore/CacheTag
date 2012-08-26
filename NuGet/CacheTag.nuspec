@@ -2,16 +2,16 @@
 <package >
   <metadata>
     <id>CacheTag</id>
-    <version>1.0.0-beta3</version>
+    <version>1.0.0-beta5</version>
     <authors>Steamcore</authors>
     <owners>Steamcore</owners>
     <projectUrl>http://cachetag.net/</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Simple and efficient JavaScript and CSS minification for ASP.NET MVC</description>
-    <releaseNotes>Fixed concurrency issue, updated AjaxMin to v4.54</releaseNotes>
+    <releaseNotes>Updated AjaxMin to v4.62, behavioural changes regarding file extensions and hashes in debug mode</releaseNotes>
     <dependencies>
-      <dependency id="AjaxMin" version="4.54.4533.37029" />
-      <dependency id="dotless" version="1.3.0.3" />
+      <dependency id="AjaxMin" version="4.62.4618.15628" />
+      <dependency id="dotless" version="1.3.0.5" />
       <dependency id="Microsoft.Web.Infrastructure" version="1.0.0.0" />
       <dependency id="WebActivator" version="1.5.1" />
     </dependencies>

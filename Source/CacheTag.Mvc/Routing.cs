@@ -1,6 +1,5 @@
 using System.Web.Mvc;
 using System.Web.Routing;
-using CacheTag.Core.Configuration;
 
 namespace CacheTag.Mvc
 {
@@ -8,14 +7,26 @@ namespace CacheTag.Mvc
 	{
 		public static void RegisterRoutes(RouteCollection routes)
 		{
-			routes.Insert(
-				0,
-				new Route(
-					MvcSettings.RouteUrl,
-					new RouteValueDictionary(new { controller = "CacheTag", action = "Resource" }),
-					new MvcRouteHandler()
-				)
-			);
+			using (routes.GetWriteLock())
+			{
+				routes.Insert(
+					0,
+					new Route(
+						CacheTagMvcSettings.RouteUrl,
+						new RouteValueDictionary(new {controller = "CacheTag", action = "Resource"}),
+						new MvcRouteHandler()
+						)
+					);
+
+				routes.Insert(
+					0,
+					new Route(
+						CacheTagMvcSettings.RouteUrl + ".{ext}",
+						new RouteValueDictionary(new { controller = "CacheTag", action = "Resource", ext = UrlParameter.Optional }),
+						new MvcRouteHandler()
+						)
+					);
+			}
 		}
 	}
 }
