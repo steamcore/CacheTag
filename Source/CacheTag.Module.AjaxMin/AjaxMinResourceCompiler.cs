@@ -16,6 +16,16 @@ namespace CacheTag.Module.AjaxMin
 {
 	public class AjaxMinResourceCompiler : IResourceCompiler<IScriptResource>, IResourceCompiler<IStyleResource>
 	{
+		private static readonly CodeSettings DefaultCodeSettings = new CodeSettings
+			{
+				KillSwitch = 0x40000000000 // Workaround for Opera issues https://github.com/andrewdavey/cassette/issues/157
+			};
+
+		private static readonly CssSettings DefaultCssSettings = new CssSettings
+			{
+				CommentMode = CssComment.All // Workaround for some Twitter Bootstrap problems
+			};
+
 		private readonly CodeSettings codeSettings;
 		private readonly CssSettings cssSettings;
 		private readonly Minifier minifier = new Minifier();
@@ -24,15 +34,14 @@ namespace CacheTag.Module.AjaxMin
 
 		public AjaxMinResourceCompiler()
 		{
-			codeSettings = new CodeSettings();
-			cssSettings = new CssSettings();
+			codeSettings = DefaultCodeSettings;
+			cssSettings = DefaultCssSettings;
 		}
 
 		public AjaxMinResourceCompiler(CodeSettings codeSettings, CssSettings cssSettings)
 		{
-			// https://github.com/andrewdavey/cassette/issues/157
-			this.codeSettings = codeSettings ?? new CodeSettings { KillSwitch = 0x40000000000 };
-			this.cssSettings = cssSettings ?? new CssSettings();
+			this.codeSettings = codeSettings ?? DefaultCodeSettings;
+			this.cssSettings = cssSettings ?? DefaultCssSettings;
 		}
 
 		public IEnumerable<IScriptResource> Compile(IEnumerable<IScriptResource> resources)
@@ -61,7 +70,7 @@ namespace CacheTag.Module.AjaxMin
 					{
 						var combinedContent = internalStyleCompiler.Compile(items).First().Content;
 						var minifiedContent = minifier.MinifyStyleSheet(combinedContent, cssSettings);
-						return new StyleSnippet(minifiedContent);
+						return new StyleSnippet(combinedContent);
 					});
 		}
 
