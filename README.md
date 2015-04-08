@@ -3,6 +3,8 @@ CacheTag
 
 Simple and efficient JavaScript and CSS minification for ASP.NET MVC
 
+**NOTE:** This project has been discontinued, use ASP.NET bundles instead.
+
 What it does
 ------------
 
